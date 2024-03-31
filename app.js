@@ -7,14 +7,14 @@ const mongoose = require('mongoose')
 require('dotenv/config')
 const authJwt = require('./helper/jwt')
 const errorHandler = require('./helper/errorHandler')
-const serverless = require('serverless-http')
+
 
 
 const productRouter = require('./router/products')
 const categoriesRoutes = require('./router/categories');
 const usersRoutes = require('./router/users');
 const ordersRoutes = require('./router/orders');
-// const swagger = require('./swagger');
+
 
 app.use(cors)
 app.options('*',cors())
@@ -48,4 +48,3 @@ app.listen(3000,()=>{
     console.log('app is listening on port 3000')
 })
 
-module.exports.handler = serverless(app)
